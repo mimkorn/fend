@@ -1,13 +1,8 @@
 # Landing Page Project
 
-## Table of Contents
+This project is to demonstrate learning in the area of pure JavaScript in the Web API domain. It employs Mutation Observer API and Intersection Observer API to enrich a sample static landing page with a degree of dynamicity.
 
-* [Instructions](#instructions)
-
-## Instructions
-
-The starter project has some HTML and CSS styling to display a static version of the Landing Page project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
-
-To get started, open `js/app.js` and start building out the app's functionality
-
-For specific, detailed instructions, look at the project instructions in the Udacity Classroom.
+- Styles were amended only to achieve smooth scrolling mentioned in the project's rubric.
+- index.html was only modified to append the JavaScript.
+- Most of the work of the project is in the app.js file.
+- I intentionally didn't leave many comments in the code. I try to adhere to the principle of self-explanatory code. When one cannot achieve high-readability in code, a comment is the last resort to shed some light.
