@@ -1,4 +1,5 @@
 const range = (start, stop, step) => Array.from({ length: (stop - start) / step + 1 }, (_, i) => start + (i * step)); // from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from
+
 let observer = new IntersectionObserver(handleIntersectionOfViewportWithSections, { threshold: range(0, 1, 0.10) });
 
 /**
@@ -17,7 +18,7 @@ function getAllSections() {
 }
 
 /**
- * Generates new navigation and puts it in place of the old one.
+ * Generates new styled navigation and puts it in place of the old one.
  */
 function resetNavigation() {
     let newNavigationList = generateListOfSectionLinks();
@@ -154,3 +155,10 @@ function findClosestIntersectingEntryToViewPortTop(entries) {
 document.addEventListener('DOMContentLoaded', handleStructureChange());
 new MutationObserver(() => handleStructureChange())
     .observe(document.querySelector("main"), { childList: true });
+
+let navigationBar = getNavBarList();
+navigationBar.addEventListener("click", event => {
+    event.preventDefault();
+    event.stopPropagation();
+    document.querySelector(`section[data-nav='${event.target.innerText}']`).scrollIntoView();
+})
