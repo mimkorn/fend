@@ -9,10 +9,6 @@
 */
 
 
-html {
-    scroll-behavior: smooth;
-}
-
 /* ---- Base Rules ---- */
 body {
     background: rgb(136,203,171);

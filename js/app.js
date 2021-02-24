@@ -156,9 +156,11 @@ document.addEventListener('DOMContentLoaded', handleStructureChange());
 new MutationObserver(() => handleStructureChange())
     .observe(document.querySelector("main"), { childList: true });
 
+// Silence link functionality and replace it with smooth scrolling into view as callbacks of click-event listeners.
+// Delegate events to whole navigation to avoid redundancy per each navigation element.    
 let navigationBar = getNavBarList();
 navigationBar.addEventListener("click", event => {
     event.preventDefault();
     event.stopPropagation();
-    document.querySelector(`section[data-nav='${event.target.innerText}']`).scrollIntoView();
+    document.querySelector(`section[data-nav='${event.target.innerText}']`).scrollIntoView({behavior: "smooth", block: "end"});
 })
