@@ -1,8 +1,19 @@
-# Landing Page Project
+# FrontEnd Development course on Udacity — Project 2 - Landing page (JavaScript)
 
-This project is to demonstrate learning in the area of pure JavaScript in the Web API domain. It employs Mutation Observer API and Intersection Observer API to enrich a sample static landing page with a degree of dynamicity.
+This project demonstrates an understanding of the basics of pure JavaScript in the Web API domain.
 
-- Styles were amended only to achieve smooth scrolling mentioned in the project's rubric.
-- index.html was only modified to append the JavaScript.
-- Most of the work of the project is in the app.js file.
-- I intentionally didn't leave many comments in the code. I try to adhere to the principle of self-explanatory code. When one cannot achieve high-readability in code, a comment is the last resort to shed some light.
+## Employed APIs
+
+- Mutation Observer API. Used to achieve a dynamic generation of navigation based on changing contents of the page.
+- Intersection Observer API. Used to style page elements in response to elements coming into the viewport.
+
+## Delineating Udacity template code from mine
+
+The only part I wrote in full is the app.js file. Most of the other code is provided by Udacity:
+
+- In the CSS folder, I only added a differentiation of active section in the navigation bar by adding a background color. For a demonstration of understanding CSS basics, check out [the first project](https://github.com/mimkorn/Udacity-FrontEnd-PersonalBlog-project).
+- index.html was only modified to append the JavaScript and the fourth static section.
+
+## Further notes
+
+I intentionally didn't leave many comments in the code first. I try to adhere to the principle of self-explanatory code. When one cannot achieve high-readability in code, a comment is the last resort to shed some light. However, the reviewer returned the project because of missing documentation, so I wrote it in full. I'll leave it up to you to decide if it was justified, considering code readability.
