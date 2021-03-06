@@ -1,8 +1,6 @@
 // Setup empty JS object to act as endpoint for all routes
 projectData = {};
 
-const weatherApiKey = '55ef5fbde2c3f490371657667fe24a24';
-
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser')
@@ -25,4 +23,11 @@ const server = app.listen(port, listening);
 
 app.get('/all', (req, res) => res.send(projectData));
 
-app.post()
+app.post('/all', (req, res) => {
+    projectData.temp = req.body.temp;
+    projectData.date = req.body.date;
+    projectData.feelings = req.body.feelings;
+    console.log(`persisted data succesfully ${projectData}`);
+    res.send(projectData);
+});
+
