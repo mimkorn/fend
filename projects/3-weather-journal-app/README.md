@@ -1,4 +1,10 @@
 # Weather-Journal App Project
-This was a homework project for Udacity FrontEnd development course. It tested basic knowledge of setting up a JS server using Express and checked the understanding of asynchronous calls in JS.
+
+## Overview
+This project requires you to create an asynchronous web app that uses Web API and user data to dynamically update the UI. 
+
 ## Instructions
-To run, check out the code, have NodeJS installed with required packages (Express, body-parser, cors). You can then run the server and check the site at localhost:3000.
+This will require modifying the `server.js` file and the `website/app.js` file. You can see `index.html` for element references, and once you are finished with the project steps, you can use `style.css` to style your application to customized perfection.
+
+## Extras
+If you are interested in testing your code as you go, you can use `tests.js` as a template for writing and running some basic tests for your code.
