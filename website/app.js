@@ -1,5 +1,5 @@
 const baseUrl = 'https://api.openweathermap.org/data/2.5/weather'
-const weatherApiKey = '55ef5fbde2c3f490371657667fe24a24';
+const weatherApiKey = 'pleasegetyourown';
 
 async function getData() {
     try {
