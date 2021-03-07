@@ -26,7 +26,7 @@ async function postData(url = '', data = {}) {
 async function getTemperatureByZip() {
     try {
 
-        let response = await fetch(`${baseUrl}?q=${document.getElementById('zip').value}&appid=${weatherApiKey}`);
+        let response = await fetch(`${baseUrl}?q=${document.getElementById('zip').value}&appid=${weatherApiKey}&units=metric`);
         let data = await response.json();
         return data.main.temp;
     } catch (err) {
@@ -38,7 +38,7 @@ function constructData(temp) {
     let d = new Date();
     let newDate = d.getMonth() + 1 + '.' + d.getDate() + '.' + d.getFullYear();
     data = {
-        "temp": `${temp} Kelvin`,
+        "temp": `${temp} Celsius`,
         "date": newDate,
         "feelings": document.getElementById('feelings').value
     }
