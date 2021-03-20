@@ -4,7 +4,14 @@ const HtmlWebPackPlugin = require("html-webpack-plugin")
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 module.exports = {
-    entry: './src/client/index.js',
+    entry: {
+        'client': './src/client/index.js',
+        'server': './src/server/index.js',
+    },
+    output: {
+        path: path.resolve(__dirname, 'dist'),
+        filename: '[name].js'
+    },
     mode: 'development',
     devtool: 'source-map',
     stats: 'verbose',

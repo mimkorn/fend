@@ -3,7 +3,16 @@ const webpack = require('webpack')
 const HtmlWebPackPlugin = require("html-webpack-plugin")
 
 module.exports = {
-    entry: './src/client/index.js',
+    entry: {
+        'client': './src/client/index.js',
+        'server': './src/server/index.js',
+    },
+    output: {
+        libraryTarget: 'var',
+        library: 'Client',
+        path: path.resolve(__dirname, 'dist'),
+        filename: '[name].js'
+    },
     mode: 'production',
     module: {
         rules: [

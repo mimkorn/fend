@@ -1,16 +1,25 @@
 function handleSubmit(event) {
     event.preventDefault()
 
-    // check what text was put into the form field
-    let formText = document.getElementById('name').value
-    checkForName(formText)
+    let formText = document.getElementById('textToAnalyze').value
 
     console.log("::: Form Submitted :::")
-    fetch('http://localhost:8080/test')
-    .then(res => res.json())
+    postData('http://localhost:8080/', {data : formText})
     .then(function(res) {
         document.getElementById('results').innerHTML = res.message
     })
+}
+ 
+async function postData(url = '', data = {}) {
+    const response = await fetch(url, {
+        method: 'POST',
+        cache: 'no-cache',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    });
+    return response.json();
 }
 
 export { handleSubmit }
