@@ -14,12 +14,17 @@ module.exports = {
         filename: '[name].js'
     },
     mode: 'production',
+    target: 'node',
     module: {
         rules: [
             {
                 test: '/\.js$/',
                 exclude: /node_modules/,
                 loader: "babel-loader"
+            },
+            {
+                test: /\.scss$/,
+                use: [ 'style-loader', 'css-loader', 'sass-loader' ]
             }
         ]
     },
@@ -27,6 +32,7 @@ module.exports = {
         new HtmlWebPackPlugin({
             template: "./src/client/views/index.html",
             filename: "./index.html",
+            excludeChunks: ['server']
         })
     ]
 }
