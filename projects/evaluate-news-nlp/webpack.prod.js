@@ -2,10 +2,9 @@ const path = require('path')
 const webpack = require('webpack')
 const HtmlWebPackPlugin = require("html-webpack-plugin")
 
-module.exports = {
+module.exports = [{
     entry: {
-        'client': './src/client/index.js',
-        'server': './src/server/index.js',
+        'client': './src/client/index.js'
     },
     output: {
         libraryTarget: 'var',
@@ -14,7 +13,6 @@ module.exports = {
         filename: '[name].js'
     },
     mode: 'production',
-    target: 'node',
     module: {
         rules: [
             {
@@ -35,4 +33,24 @@ module.exports = {
             excludeChunks: ['server']
         })
     ]
-}
+},
+{
+    entry: {
+        'server': './src/server/index.js',
+    },
+    output: {
+        path: path.resolve(__dirname, 'dist'),
+        filename: '[name].js'
+    },
+    mode: 'production',
+    target: 'node',
+    module: {
+        rules: [
+            {
+                test: '/\.js$/',
+                exclude: /node_modules/,
+                loader: "babel-loader"
+            }
+        ]
+    }
+}] 
