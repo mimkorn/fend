@@ -4,6 +4,7 @@ const HtmlWebPackPlugin = require("html-webpack-plugin")
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const WorkboxPlugin = require('workbox-webpack-plugin');
 
 module.exports = [{
     entry: {
@@ -35,7 +36,8 @@ module.exports = [{
             filename: "./index.html",
             excludeChunks: ['server']
         }),
-        new MiniCssExtractPlugin({ filename: "[name].css" })
+        new MiniCssExtractPlugin({ filename: "[name].css" }),
+        new WorkboxPlugin.GenerateSW()
     ],
     optimization: {
         minimize: true,
