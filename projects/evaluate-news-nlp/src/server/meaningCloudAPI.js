@@ -1,5 +1,6 @@
+import fetch from 'node-fetch'
 //TODO try removing export keyword at the baseURL
-export const baseURL = `api.meaningcloud.com/sentiment-2.1?key=${process.env.API_KEY}&of=json&lang=en&model=general&txt=`
+export const baseUrl = `https://api.meaningcloud.com/sentiment-2.1?key=${process.env.API_KEY}&of=json&lang=en&model=general&txt=`
 
 export async function getSentiment(data) {
     try {
@@ -8,6 +9,6 @@ export async function getSentiment(data) {
         console.log(result);
         return result;
     } catch (err) {
-        alert(err);
+        console.log(err);
     }
 }
