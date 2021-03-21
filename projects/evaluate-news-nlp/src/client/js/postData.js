@@ -1,6 +1,6 @@
 async function postData(url = '', data = {}) {
-    console.log(data);
-    console.log(JSON.stringify(data));
+    if (!data.body) console.log('body property was missing in data');
+    if (data.body === "") console.log('Cannot pass empty data');
     try {
         const response = await fetch(url, {
             method: 'POST',
