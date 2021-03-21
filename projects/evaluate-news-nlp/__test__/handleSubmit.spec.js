@@ -3,8 +3,6 @@ const path = require('path');
 const html = fs.readFileSync(path.resolve(__dirname, '../src/client/views/index.html'), 'utf8');
 const event = { preventDefault: () => {} };
 
-jest.dontMock('fs');
-
 import { handleSubmit } from '../src/client/js/formHandler'
 import * as postDataFn from '../src/client/js/postData'
 
