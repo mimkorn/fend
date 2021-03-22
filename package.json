@@ -4,8 +4,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "start": "node src/server/index.js",
-    "start2": "node dist/server.js",
+    "start": "node dist/server.js",
     "build-prod": "webpack --config webpack.prod.js",
     "build-dev": "webpack serve --config webpack.dev.js --open",
     "build-dev-no-run": "webpack --config webpack.dev.js"
