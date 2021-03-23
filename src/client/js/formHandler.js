@@ -8,10 +8,24 @@ function handleSubmit(event) {
         alert("Seems like you didn't put any text value into the input field. Please provide input for analysis.")
         return;
     }
-    postData(`http://[::]:8081/analyze`, {body : formText})
+    postData(`http://localhost:8081/analyze`, {body : formText})
     .then(function(res) {
-        document.getElementById('results').innerHTML = JSON.stringify(res)
+        console.log(res)
+        document.getElementById('results').innerHTML = ""
+        document.getElementById('results').appendChild(generateListOfAttributes(res))
     })
 }
 
+function generateListOfAttributes(data) {
+    let items = document.createElement("ul")
+    addDataPoint(items, "agreement", data)
+    addDataPoint(items, "confidence", data)
+    addDataPoint(items, "irony", data)
+    return items;
+}
+
+function addDataPoint(list, attribute, data){
+    let dataPoint = list.appendChild(document.createElement("li"));
+    dataPoint.innerHTML = `${attribute} is ${data[attribute]}`;
+}
 export { handleSubmit }

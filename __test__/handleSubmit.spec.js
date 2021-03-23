@@ -30,6 +30,6 @@ test('expect postData called with correct data', () => {
     document.getElementById("textToAnalyze").value = "dummyData"
     postDataFn.postData.mockImplementation((url, data) => Promise.resolve({someResponse: 1}))
     handleSubmit(event)    
-    expect(postDataFn.postData).toBeCalledWith(`http://[::]:8081/analyze`, {body : "dummyData"})
+    expect(postDataFn.postData).toBeCalledWith(`http://localhost:8081/analyze`, {body : "dummyData"})
     expect(document.getElementById('results').innerHTML == "{someResponse:1}")
 });
