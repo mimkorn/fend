@@ -2,7 +2,6 @@ const express = require('express')
 const dotenv = require('dotenv');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-import fetch from 'node-fetch'
 
 dotenv.config();
 console.log(`Your API key is ${process.env.API_KEY}`);
@@ -28,7 +27,6 @@ app.get('/test', function (req, res) {
 })
 
 app.post('/analyze', async function(req, res) {
-    console.log("Hey, look here", req)
     let result = await meaningCloudAPI.getSentiment(req.body.body)
     res.send(result)
 })
